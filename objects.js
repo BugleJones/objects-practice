@@ -3,19 +3,26 @@
 //in a string that is passed into the function.
 
 var lettersFunction = {
-  items: [],
-  uniqueLetters: function(input) {
-    var unique = {};
-    var count = "";
-    for (var i = 0; i < input.length; i++) {
-      if (count.indexOf(input.charAt(i))== -1) {
-          count += input[i];
+  //function to count characters
+  countCharacterTypes: function(str) {
+    var output = {};
+    var propName;
+
+    for (var i = 0; i < str.length; i++) {
+      var char = str[i].toLowerCase();
+      if (/[a-z]/.test(char) === false) {continue;}
+
+      propName = char;
+
+      if (output[propName] === undefined) {
+      output[propName] = 0;
       }
+
+      output[propName] += 1;
     }
-  return count;
+
+  return output;
   }
 }
 
-var userInput = process.argv.slice(2);
-lettersFunction.uniqueLetters("inputalloftheletters");
-
+console.log(lettersFunction.countCharacterTypes("Alaska has many bears bear beats ..,,>>"));
