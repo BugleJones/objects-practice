@@ -1,6 +1,5 @@
-//Write a function countLetters that can
-//return to us all the unique characters that exist
-//in a string that is passed into the function.
+//Write a function that returns each non-space/punctuation
+//character with its corresponding positions within a string
 
 var lettersFunction = {
   //function to count characters
@@ -25,4 +24,4 @@ var lettersFunction = {
   }
 }
 
-console.log(lettersFunction.countCharacterTypes("Alaska has many bears bear beats ..,,>>"));
+console.log(lettersFunction.countCharacterTypes("Alaska has many bears bear beats"));

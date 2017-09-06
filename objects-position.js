@@ -15,10 +15,10 @@ var lettersFunction = {
       propName = char;
 
       if (output[propName] === undefined) {
-      output[propName] = 0;
+      output[propName] = [];
       }
 
-      output[propName] += 1;
+      output[propName].push(i);
     }
 
   return output;
