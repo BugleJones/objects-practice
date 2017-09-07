@@ -40,30 +40,26 @@ var companySalesData = [
 function calculateSalesTax(salesData, taxRates) {
   var salesTaxInfo = {};
 
-console.log(salesTaxInfo)
+//Loop through our salesTaxRate data
   for (var i = 0; i < salesData.length; i++) {
+
     if (!salesTaxInfo[salesData[i]["name"]]) {
-      salesTaxInfo[salesData[i]]["name"]] = {};
-      salesTaxInfo[salesData[i]]["name"]]["totalSales"] = 0;
-      salesTaxInfo[salesData[i]]["name"]]["totalTaxes"] = 0;
-
-    for (var j = 0; j < salesData[i][sales]length; j++) {
-      var calculateTax = 0;
-      salesTaxInfo[salesData[i]]["name"]["totalSales"] = salesTaxInfo[salesData[i]]["name"]]["totalSales"] + salesData[i]["sales"][j];
-      calculateTax = salesData[i]["sales"][j] * taxRates[salesData[i]["province"]];
-      salesTaxData[salesData[i]["name"]["totalTaxes"] = salesTaxData[salesData[salesData][i]["name"]["totalTaxes"]]
+      salesTaxInfo[salesData[i]["name"]] = {};
+      salesTaxInfo[salesData[i]["name"]]["totalSales"] = 0;
+      salesTaxInfo[salesData[i]["name"]]["totalTaxes"] = 0;
     }
-}
-
-console.log(calculateSalesTax())
-
+    for (var j = 0; j < salesData[i]["sales"].length; j++) {
+      var calculateTax = 0;
+      salesTaxInfo[salesData[i]["name"]]["totalSales"] = salesTaxInfo[salesData[i]["name"]]["totalSales"] + salesData[i]["sales"][j];
+      calculateTax = salesData[i]["sales"][j] * taxRates[salesData[i]["province"]];
+      salesTaxInfo[salesData[i]["name"]]["totalTaxes"] = salesTaxInfo[salesData[i]["name"]]["totalTaxes"] + calculateTax;
     }
   }
-  for (var j = 0; j < salesData[i][sales]length; j++) {
-        saleAdd += companySalesData[index].sales[j];
-        }
+  return salesTaxInfo;
 }
 
+var results = calculateSalesTax(companySalesData, salesTaxRates);
+console.log(results)
 
 //   function calculateSalesTaxCompanies(index) {
 //     var openObject = {};
